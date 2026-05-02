@@ -1,0 +1,163 @@
+PS C:\Users\MUHAMMAD MAZIN\Downloads\data-cleaning-project> pip show pandas
+Name: pandas
+Version: 3.0.2
+Summary: Powerful data structures for data analysis, time series, and statistics
+Home-page: https://pandas.pydata.org
+Author:
+Author-email: The Pandas Development Team <pandas-dev@python.org>
+License: BSD 3-Clause License
+
+ Copyright (c) 2008-2011, AQR Capital Management, LLC, Lambda Foundry, Inc. and PyData Development Team
+ All rights reserved.
+
+ Copyright (c) 2011-2026, Open source contributors.
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+ * Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+ * Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Location: C:\Users\MUHAMMAD MAZIN\AppData\Roaming\Python\Python314\site-packages
+Requires: numpy, python-dateutil, tzdata
+Required-by: seaborn
+PS C:\Users\MUHAMMAD MAZIN\Downloads\data-cleaning-project> python pandas_basics.py
+   rank     country                       region  score  ...  healthy_life_expectancy  freedom  generosity  corruption
+0     1     Finland               Western Europe  7.764  ...                    0.952    0.670       0.186       0.498
+1     2     Iceland               Western Europe  7.701  ...                    0.959    0.662       0.269       0.512
+2     3     Denmark               Western Europe  7.688  ...                    0.948    0.665       0.211       0.495
+3     4  Costa Rica  Latin America and Caribbean  7.439  ...                    0.891    0.631       0.178       0.312
+4     5      Sweden               Western Europe  7.401  ...                    0.952    0.658       0.224       0.481
+
+[5 rows x 10 columns]
+<class 'pandas.DataFrame'>
+RangeIndex: 130 entries, 0 to 129
+Data columns (total 10 columns):
+ #   Column                   Non-Null Count  Dtype
+---  ------                   --------------  -----
+ 0   rank                     130 non-null    int64
+ 1   country                  130 non-null    str
+ 2   region                   130 non-null    str
+ 3   score                    130 non-null    float64
+ 4   gdp_per_capita           130 non-null    float64
+ 5   social_support           130 non-null    float64
+ 6   healthy_life_expectancy  130 non-null    float64
+ 7   freedom                  130 non-null    float64
+ 8   generosity               130 non-null    float64
+ 9   corruption               130 non-null    float64
+dtypes: float64(7), int64(1), str(2)
+memory usage: 10.3 KB
+None
+             rank       score  gdp_per_capita  ...     freedom  generosity  corruption
+count  130.000000  130.000000      130.000000  ...  130.000000  130.000000  130.000000
+mean    65.500000    5.454185        1.135446  ...    0.483162    0.164823    0.178231
+std     37.671829    1.255681        0.559534  ...    0.118050    0.055821    0.134135
+min      1.000000    1.446000        0.171000  ...    0.071000    0.061000    0.011000
+25%     33.250000    4.136000        0.671000  ...    0.393500    0.131000    0.071000
+50%     65.500000    5.581000        1.121000  ...    0.491000    0.161000    0.141000
+75%     97.750000    6.396000        1.631000  ...    0.571000    0.201000    0.261000
+max    130.000000    7.764000        2.121000  ...    0.671000    0.301000    0.512000
+
+[8 rows x 8 columns]
+0       Finland
+1       Iceland
+2       Denmark
+3    Costa Rica
+4        Sweden
+Name: country, dtype: str
+rank                                    1
+country                           Finland
+region                     Western Europe
+score                               7.764
+gdp_per_capita                      1.892
+social_support                      1.581
+healthy_life_expectancy             0.952
+freedom                              0.67
+generosity                          0.186
+corruption                          0.498
+Name: 0, dtype: object
+rank                                    1
+country                           Finland
+region                     Western Europe
+score                               7.764
+gdp_per_capita                      1.892
+social_support                      1.581
+healthy_life_expectancy             0.952
+freedom                              0.67
+generosity                          0.186
+corruption                          0.498
+Name: 0, dtype: object
+      country  score  score_scaled
+0     Finland  7.764         77.64
+1     Iceland  7.701         77.01
+2     Denmark  7.688         76.88
+3  Costa Rica  7.439         74.39
+4      Sweden  7.401         74.01
+PS C:\Users\MUHAMMAD MAZIN\Downloads\data-cleaning-project> python data_cleaning.py
+rank                       0
+country                    0
+region                     0
+score                      0
+gdp_per_capita             0
+social_support             0
+healthy_life_expectancy    0
+freedom                    0
+generosity                 0
+corruption                 0
+dtype: int64
+PS C:\Users\MUHAMMAD MAZIN\Downloads\data-cleaning-project> python data_analysis.py
+       country  score
+0      Finland  7.764
+1      Iceland  7.701
+2      Denmark  7.688
+3   Costa Rica  7.439
+4       Sweden  7.401
+5       Norway  7.392
+6  Netherlands  7.319
+7       Israel  7.234
+8   Luxembourg  7.228
+9  Switzerland  7.201
+                               region     score
+0          Central and Eastern Europe  6.551273
+1  Commonwealth of Independent States  5.757000
+2                           East Asia  6.099200
+3         Latin America and Caribbean  5.874933
+4        Middle East and North Africa  5.356929
+5               North America and ANZ  6.969000
+6                          South Asia  4.816833
+7                      Southeast Asia  5.694333
+8                  Sub-Saharan Africa  4.204256
+9                      Western Europe  6.987167
+                gdp_per_capita     score
+gdp_per_capita        1.000000  0.879284
+score                 0.879284  1.000000
+            country  generosity
+73         Cambodia       0.301
+12      New Zealand       0.282
+68            Nepal       0.281
+49         Thailand       0.271
+24   United Kingdom       0.271
+9       Switzerland       0.271
+1           Iceland       0.269
+6       Netherlands       0.267
+110        Tanzania       0.261
+95           Malawi       0.261
